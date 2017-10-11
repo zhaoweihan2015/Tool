@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			.list_move_box {
+				width: 250px;
+				height: 350px;
+				position: relative;
+				transform-style: preserve-3d;
+				perspective: 1000px;
+				margin: 100px;
+				float: left;
+			}
+			.mainBox{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				transform-style: preserve-3d;
+				transition: transform 1s;
+				
+			}
+			.list_move_box:hover .mainBox {
+				transform: rotateY(180deg);
+			}
+			
+			.mainBox .bg{
+				transition: transform 1s;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				border-radius: 15px;
+			}
+			
+			.word_show {
+				color: white;
+				font: 900 45px/50px "agency fb";
+				text-align: center;
+				position: absolute;
+				width: 200px;
+				padding:70px 25px;				
+			}
+			.word_show>span{
+				font-size: 20px;
+				font-weight: normal;
+			}
+			.word_show>hr{
+				margin: 15px;
+			}
+			.word_show.front{
+				transform: translateZ(80px);
+			}
+			.word_show.back{
+				transform: translateZ(-80px) rotateY(180deg);
+			}
+			.back_bg {
+				background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+				transform: translateZ(-1px) rotateY(180deg);
+				
+			}
+			.front_bg {
+				background: url(8.jpg) center/cover;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="list_move_box">
+			<div class="mainBox">
+				<div class="word_show front">
+					WHICH ONE <br>
+					U WANT?<br> 
+					<hr />
+					<span>
+						CHOOSE ONE
+					</span>
+				</div>
+				<div class="bg front_bg">
+				</div>
+				<div class="word_show back">
+					TO LIVE <br>
+					OR  <br>
+					TO DIE <br>
+					CHOOSE!
+				</div>
+				<div class="bg back_bg">
+				</div>
+			</div>
+		</div>
+
+</html>

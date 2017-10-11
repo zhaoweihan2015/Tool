@@ -1,0 +1,12 @@
+#navMove ul {
+    position: relative;
+}
+
+#navMove span {
+    position: absolute;
+    width: 100px;
+    transition: transform 0.8s;
+    height: 47px;
+    background: lightseagreen;
+    border-bottom: 3px solid lightseagreen;
+}

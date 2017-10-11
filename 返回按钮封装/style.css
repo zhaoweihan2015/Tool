@@ -1,0 +1,7 @@
+img#returnButton {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    cursor: pointer;
+}

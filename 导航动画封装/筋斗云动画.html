@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        body {
+            background: #CCCCCC;
+        }
+
+        .navMove {
+            height: 50px;
+            width: 800px;
+            position: relative;
+            background: white;
+            margin-left: -400px;
+            left: 50%;
+            top: 200px;
+        }
+
+        .navMove li {
+            width: 100px;
+            height: 50px;
+            float: left;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="navMove" id="navMove">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</div>
+
+<script src="navAnimation.js"></script>
+<script>
+    navAnimation({
+        "id":"navMove"
+    })
+</script>
+</body>
+</html>
