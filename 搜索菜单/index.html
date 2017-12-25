@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="search_box">
+        <div class="search">
+            <input type="text">
+        </div>
+        <div class="list">
+            <ul>
+                <li>
+                    <a href="javascript:;"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    var data = [
+        '原来你是这样的JAVA[01]-基础一瞥',
+        '大白话Vue源码系列(04)：生成render函数',
+        '为什么MOBA、“吃鸡”游戏不推荐用tcp协议——实测数据',
+        'python 金融网贷数据，pandas进行数据分析并可视化系列 (词频统计,基本操作)',
+        'IntelliJ IDEA（五） ：Settings（中）',
+        '微软工作这二年',
+        '前端MVC Vue2学习总结（一）——MVC与vue2概要、模板、数据绑定与综合示例',
+        '在Laravel中使用swoole来取代nginx作为http服务器',
+        '关于React组件之间如何优雅地传值的探讨',
+        'Struts2学习笔记整理(三)',
+        'C# 函数式编程 —— 使用 Lambda 表达式编写递归函数',
+        'thinkphp5基础'
+    ]
+    var box = document.getElementsByClassName('search_box')[0]
+    var oUl = box.getElementsByTagName('ul')[0]
+    box.getElementsByTagName('input')[0].addEventListener('keyup', function() {
+        oUl.innerHTML = ''
+        if (!this.value) {
+            return false
+        }
+        var val = this.value
+        var el = new RegExp("\\" + val + "", "gi")
+            // console.log(el)
+        var f = document.createDocumentFragment()
+        data.forEach(function(e) {
+            if (e.match(el) != null) {
+                var oLi = document.createElement('li')
+                oLi.innerHTML = '<a>' + e + '</a>'
+                f.appendChild(oLi)
+            }
+        })
+        oUl.appendChild(f)
+    })
+</script>
+
+</html>
