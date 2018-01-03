@@ -15,9 +15,6 @@
         </div>
         <div class="list">
             <ul>
-                <li>
-                    <a href="javascript:;"></a>
-                </li>
             </ul>
         </div>
     </div>
@@ -35,7 +32,11 @@
         '关于React组件之间如何优雅地传值的探讨',
         'Struts2学习笔记整理(三)',
         'C# 函数式编程 —— 使用 Lambda 表达式编写递归函数',
-        'thinkphp5基础'
+        'thinkphp5基础',
+        '正则表达式中不区分大小写的写法',
+        'js如何生成动态正则表达式？',
+        'js动态拼接正则表达式的两种方法_javascript技巧',
+        'JavaScript怪癖和秘密之动态正则表达式实例页面'
     ]
     var box = document.getElementsByClassName('search_box')[0]
     var oUl = box.getElementsByTagName('ul')[0]
@@ -45,8 +46,8 @@
             return false
         }
         var val = this.value
-        var el = new RegExp("\\" + val + "", "gi")
-            // console.log(el)
+        var el = new RegExp(val, "gi") //动态正则
+        console.log(el)
         var f = document.createDocumentFragment()
         data.forEach(function(e) {
             if (e.match(el) != null) {
